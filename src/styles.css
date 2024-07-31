@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(45deg, #FF4500, #d4e16d, #FF8C00, #FFD700, #00BFFF, #023d78);
+    background-size: 600% 600%;
+    animation: gradientAnimation 12s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* H1*/
+
+@keyframes fluorescence {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 0, 0, 0.8), 0 0 10px rgba(255, 0, 0, 0.6), 0 0 15px rgba(255, 0, 0, 0.4);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.6), 0 0 30px rgba(0, 255, 0, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(0, 0, 255, 0.8), 0 0 10px rgba(0, 0, 255, 0.6), 0 0 15px rgba(0, 0, 255, 0.4);
+    }
+}
+
+h1 {
+    color: rgb(2, 2, 45);
+    font-size: 3rem; /* Tamaño del texto */
+    font-weight: bold;
+    text-align: center;
+    animation: fluorescence 2s infinite; /* Aplicar la animación de fluorescencia */
+}
+
+h5 {
+    text-align: center;
+    font-weight: bold;
+    color: blue;
+}
+
+p {
+    text-align: center;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.text-center {
+    text-align: center; /* Centra el texto dentro del contenedor del botón */
+}
+
+button {
+    margin: 0;
+    padding: 10px 20px; /* Ajusta el padding según sea necesario */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-dialog {
+    max-width: 800px;
+}
+
+.modal-body .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-body .col-md-8 {
+    text-align: center;
+}
+ 
+
+.modal-footer {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+.btn-primary {
+    margin: 0 auto; /* Centra el botón horizontalmente */
+}
