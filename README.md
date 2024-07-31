@@ -54,6 +54,10 @@ dragon-ball-project
 └── package.json
 ```
 
+## URL del Proyecto Desplegado:
+
+https://dragon-ball-project-react.vercel.app/
+
 ## Scripts Disponibles
 
 En el directorio del proyecto, puedes ejecutar:
