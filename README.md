@@ -58,6 +58,20 @@ dragon-ball-project
 
 https://dragon-ball-project-react.vercel.app/
 
+
+## Galería
+
+| Imagen 1 | Imagen 2 | Imagen 3 |
+|:---------:|:---------:|:---------:|
+| ![Imagen 1](Image/1.png) | ![Imagen 2](Image/2.png) | ![Imagen 3](Image/3.png) |
+| Portada 1 | Portada 2 | Portada 3 |
+
+| Imagen 4 | Imagen 5 | Imagen 6 |
+|:---------:|:---------:|:---------:|
+| ![Imagen 4](Image/4.png) | ![Imagen 5](Image/5.png) | ![Imagen 6](Image/6.png) |
+| Portada 4 | Portada 5 | Portada 6 |
+
+
 ## Scripts Disponibles
 
 En el directorio del proyecto, puedes ejecutar:
