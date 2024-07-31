@@ -23,9 +23,16 @@ Puedes consultar la documentación completa de la API en [Dragon Ball API Docume
 Crea un nuevo proyecto de React utilizando Create React App:
 
 ```
-npx create-react-app dragon-ball-project
+
 cd %userprofile%\Desktop
+
+npx create-react-app dragon-ball-project
+
+Asegúrate de tener react-router-dom instalado:
+
+npm install react-router-dom
 ```
+
 
 Reemplaza el contenido generado automáticamente con los archivos y código proporcionado.
 
