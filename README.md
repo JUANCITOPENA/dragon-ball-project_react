@@ -1,6 +1,6 @@
 # Dragon Ball Project API Dragon Ball Z en React
 
-Este proyecto muestra información sobre los personajes y planetas del universo Dragon Ball. Está diseñado con HTML, CSS y JavaScript utilizando Bootstrap para el estilo y la funcionalidad de los modales y paginación.
+Este proyecto muestra información sobre los personajes y planetas del universo Dragon Ball. Está diseñado con React (HTML, CSS y JavaScript) utilizando Bootstrap para el estilo y la funcionalidad de los modales y paginación.
 
 ## API de Dragon Ball
 
