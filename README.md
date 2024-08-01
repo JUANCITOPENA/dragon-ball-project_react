@@ -92,8 +92,61 @@ dragon-ball-project
 
 ### Componentes Principales
 
+### public/index.html:
+
+Este archivo HTML define la estructura básica de una página web para un proyecto llamado "Dragon Ball Project API". Incluye:
+
+La configuración de la codificación y el viewport.
+El título de la página.
+Los enlaces a los estilos de Bootstrap y un archivo CSS local.
+Un contenedor div con el ID root para insertar contenido dinámico.
+La inclusión del script de Bootstrap para funcionalidades interactivas.
+
+### public/index.html:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball Project API</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="%PUBLIC_URL%/styles.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+```
+
+
+
+### src/index.js:
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './styles.css';
+
+import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+```
+
+
 #### App.js
 Este es el componente principal que configura las rutas de la aplicación.
+
+### src/App.js:
 
 ```javascript
 import React from 'react';
