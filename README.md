@@ -120,6 +120,13 @@ La inclusión del script de Bootstrap para funcionalidades interactivas.
 </html>
 ```
 
+### src/index.js:
+
+Este archivo JavaScript es el punto de entrada de una aplicación React. Hace lo siguiente:
+
+- Importa las bibliotecas necesarias: React, ReactDOM, un archivo CSS local, la aplicación principal (App), y los estilos de Bootstrap.
+- Busca el elemento con el ID `root` en el HTML.
+- Renderiza el componente `App` dentro del `React.StrictMode` en el elemento `root`.
 
 
 ### src/index.js:
@@ -144,7 +151,17 @@ root.render(
 
 
 #### App.js
+
 Este es el componente principal que configura las rutas de la aplicación.
+
+- **Importa**: React, `BrowserRouter` como `Router`, `Route`, y `Routes` desde `react-router-dom`, además de los componentes `Characters` y `Planets` desde el directorio `pages`.
+- **Define**: Un componente funcional `App` que:
+  - Utiliza `Router` para gestionar las rutas.
+  - Renderiza una estructura con un contenedor `div` que aplica un margen superior (`mt-5`).
+  - Configura las rutas de la aplicación con `Routes`:
+    - La ruta raíz (`/`) muestra el componente `Characters`.
+    - La ruta `/planets` muestra el componente `Planets`.
+- **Exporta**: El componente `App` como el exportable por defecto.
 
 ### src/App.js:
 
@@ -171,7 +188,19 @@ export default App;
 ```
 
 #### Characters.js
-Este componente maneja la lógica para mostrar y filtrar personajes.
+
+Este componente maneja la visualización y filtrado de personajes:
+
+- **Estados**: Administra personajes, filtrados, página actual, carga, y errores.
+- **Efecto**: Obtiene datos de personajes desde una API al montar el componente.
+- **Filtrado**: Permite buscar personajes por nombre y actualiza la lista filtrada.
+- **Paginación**: Muestra una página de personajes y maneja la paginación.
+- **Renderiza**: 
+  - Un título y campo de búsqueda.
+  - Mensajes de carga o error según el estado.
+  - Tarjetas de personajes, paginación y un modal para detalles del personaje seleccionado.
+
+#### Characters.js:
 
 ```javascript
 import React, { useState, useEffect } from 'react';
@@ -257,8 +286,21 @@ function Characters() {
 export default Characters;
 ```
 
+
 #### Planets.js
-Similar a Characters.js, este componente maneja la lógica para mostrar y filtrar planetas.
+Este componente maneja la visualización y filtrado de planetas:
+
+- **Estados**: Administra planetas, filtrados, página actual, carga, y errores.
+- **Efecto**: Obtiene datos de planetas desde una API al montar el componente.
+- **Filtrado**: Permite buscar planetas por nombre y actualiza la lista filtrada.
+- **Limpieza**: Resetea la lista filtrada a la lista original.
+- **Paginación**: Muestra una página de planetas y maneja la paginación.
+- **Renderiza**: 
+  - Un título y campo de búsqueda con botones para limpiar y cambiar de vista.
+  - Mensajes de carga o error según el estado.
+  - Tarjetas de planetas, paginación y un modal para detalles del planeta seleccionado.
+
+#### Planets.js
 
 ```javascript
 import React, { useState, useEffect } from 'react';
@@ -353,6 +395,19 @@ export default Planets;
 ### Componentes Auxiliares
 
 #### CharacterCard.js
+
+Este componente muestra una tarjeta de personaje:
+
+- **Propiedades**: 
+  - `character`: Datos del personaje.
+  - `setSelectedCharacter`: Función para seleccionar el personaje.
+- **Renderiza**:
+  - Una tarjeta (`card`) con una imagen del personaje.
+  - Nombre del personaje en el título de la tarjeta.
+  - Un botón para ver detalles, que activa la función `setSelectedCharacter` con el personaje correspondiente.
+
+
+#### CharacterCard.js
 ```javascript
 import React from 'react';
 
@@ -372,6 +427,18 @@ function CharacterCard({ character, setSelectedCharacter }) {
 
 export default CharacterCard;
 ```
+
+#### CharacterModal.js
+
+Este componente muestra un modal con detalles del personaje:
+
+- **Propiedades**:
+  - `character`: Datos del personaje.
+  - `setSelectedCharacter`: Función para cerrar el modal.
+- **Renderiza**:
+  - Un modal centrado que se muestra siempre (`show={true}`).
+  - Imagen del personaje y detalles como nombre, descripción, especie, género, ki, y afiliación.
+  - Un botón para cerrar el modal llamando a `setSelectedCharacter` con `null`.
 
 #### CharacterModal.js
 ```javascript
@@ -406,6 +473,19 @@ function CharacterModal({ character, setSelectedCharacter }) {
 export default CharacterModal;
 ```
 
+
+#### PlanetCard.js
+
+Este componente muestra una tarjeta de planeta:
+
+- **Propiedades**:
+  - `planet`: Datos del planeta.
+  - `setSelectedPlanet`: Función para seleccionar el planeta.
+- **Renderiza**:
+  - Una tarjeta (`card`) con una imagen del planeta.
+  - Nombre del planeta en el título de la tarjeta.
+  - Un botón para ver detalles, que activa la función `setSelectedPlanet` con el planeta correspondiente.
+
 #### PlanetCard.js
 ```javascript
 import React from 'react';
@@ -426,6 +506,19 @@ function PlanetCard({ planet, setSelectedPlanet }) {
 
 export default PlanetCard;
 ```
+
+#### PlanetModal.js
+
+Este componente muestra un modal con detalles del planeta:
+
+- **Propiedades**:
+  - `planet`: Datos del planeta.
+  - `setSelectedPlanet`: Función para cerrar el modal.
+- **Renderiza**:
+  - Un modal centrado que se muestra siempre (`show={true}`).
+  - Imagen del planeta y detalles como nombre, descripción y si el planeta está destruido.
+  - Un botón para cerrar el modal llamando a `setSelectedPlanet` con `null`.
+
 
 #### PlanetModal.js
 ```javascript
@@ -451,6 +544,21 @@ function PlanetModal({ planet, setSelectedPlanet }) {
 
 export default PlanetModal;
 ```
+
+#### Pagination.js
+
+Este componente maneja la paginación:
+
+- **Propiedades**:
+  - `itemsPerPage`: Número de ítems por página.
+  - `totalItems`: Total de ítems a paginar.
+  - `currentPage`: Página actual.
+  - `setCurrentPage`: Función para actualizar la página actual.
+- **Renderiza**:
+  - Una lista de números de página basada en el total de ítems y los ítems por página.
+  - Cada número de página es un botón que actualiza la página actual al hacer clic.
+  - Resalta el número de la página actual.
+
 
 #### Pagination.js
 ```javascript
@@ -480,26 +588,147 @@ function Pagination({ itemsPerPage, totalItems, currentPage, setCurrentPage }) {
 
 export default Pagination;
 ```
+### Descripción del CSS
+
+- **`body`**: Aplica un gradiente animado como fondo, con un ciclo de animación de 12 segundos.
+- **`@keyframes gradientAnimation`**: Define la animación del gradiente de fondo, cambiando su posición.
+- **`@keyframes fluorescence`**: Anima el efecto de resplandor en el texto de los encabezados (`h1`).
+- **`h1`**: Estilo para los encabezados principales, con un color de texto y animación de fluorescencia.
+- **`h5`**: Estilo para los subtítulos, centrados y en color azul.
+- **`p`**: Centra el texto en los párrafos.
+- **`.card`**: Estilo para tarjetas, con un efecto de escala al pasar el cursor.
+- **`.card-img-top`**: Ajusta la imagen en la parte superior de la tarjeta, con un fondo blanco.
+- **`.card-body`**: Centra el contenido de la tarjeta.
+- **`.text-center`**: Centra el texto en el contenedor del botón.
+- **`button`**: Ajusta el estilo del botón, con padding y centramiento.
+- **`.modal-dialog`**: Define un ancho máximo para los diálogos del modal.
+- **`.modal-body .row`**: Centra el contenido en el cuerpo del modal.
+- **`.modal-footer`**: Centra el contenido del pie del modal.
+- **`.btn-primary`**: Centra el botón primario horizontalmente en el pie del modal.
+
 
 ### Estilos (styles.css)
 ```css
-.modal {
-  display: block;
-  background-color: rgba(0, 0, 0, 0.5);
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(45deg, #FF4500, #d4e16d, #FF8C00, #FFD700, #00BFFF, #023d78);
+    background-size: 600% 600%;
+    animation: gradientAnimation 12s ease infinite;
 }
 
-.modal .modal-content {
-  border: none;
-  border-radius: 0.5rem;
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
 }
 
-.modal .modal-body {
-  padding: 2rem;
+/* H1*/
+
+@keyframes fluorescence {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 0, 0, 0.8), 0 0 10px rgba(255, 0, 0, 0.6), 0 0 15px rgba(255, 0, 0, 0.4);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.6), 0 0 30px rgba(0, 255, 0, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(0, 0, 255, 0.8), 0 0 10px rgba(0, 0, 255, 0.6), 0 0 15px rgba(0, 0, 255, 0.4);
+    }
 }
 
-.modal .modal-body img {
-  border-radius: 0.5rem;
+h1 {
+    color: rgb(2, 2, 45);
+    font-size: 3rem; /* Tamaño del texto */
+    font-weight: bold;
+    text-align: center;
+    animation: fluorescence 2s infinite; /* Aplicar la animación de fluorescencia */
 }
+
+h5 {
+    text-align: center;
+    font-weight: bold;
+    color: blue;
+}
+
+p {
+    text-align: center;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.text-center {
+    text-align: center; /* Centra el texto dentro del contenedor del botón */
+}
+
+button {
+    margin: 0;
+    padding: 10px 20px; /* Ajusta el padding según sea necesario */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-dialog {
+    max-width: 800px;
+}
+
+.modal-body .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-body .col-md-8 {
+    text-align: center;
+}
+ 
+.modal-footer {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+.btn-primary {
+    margin: 0 auto; /* Centra el botón horizontalmente */
+}
+
 ```
 
 ## 🤝 Contribuciones
@@ -543,6 +772,17 @@ Aunque este proyecto ya es funcional, hay varias áreas en las que se podría me
 Si tienes alguna pregunta o sugerencia, no dudes en abrir un issue o contactar al mantenedor del proyecto:
 
 👤 [JUANCITO PEÑA](https://github.com/JUANCITOPENA)
+
+No olvides suscribirte, darle like, y compartir este video para ayudarnos a seguir creando contenido como este. ¡Vamos a comenzar! 😊📡
+
+#RedesCisco #ProyectoDeRedes #CiscoPacketTracer 🌐💻📡
+
+1. 🎬 **YouTube**: [@JuancitoPenaV](https://www.youtube.com/@JuancitoPenaV)
+2. 👨‍💼 **LinkedIn**: [Juancito Peña](https://www.linkedin.com/in/juancitope%C3%B1a/)
+3. 📷 **Instagram**: [@juancito.pena.v](https://www.instagram.com/juancito.pena.v/)
+4. 📑 **Facebook**: [Juancito Peña V](https://www.facebook.com/juancito.p.v)
+5. 🐦 **Twitter**: [@JuancitoPenaV](https://twitter.com/JuancitoPenaV)
+6. 📰 **Blog**: [Adviser Tecnology](https://advisertecnology.com/)
 
 ---
 
