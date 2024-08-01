@@ -1,296 +1,496 @@
-# Dragon Ball Project API Dragon Ball Z en React
+# 🐉 Proyecto Dragon Ball API con React
 
-Este proyecto muestra información sobre los personajes y planetas del universo Dragon Ball. Está diseñado con React (HTML, CSS y JavaScript) utilizando Bootstrap para el estilo y la funcionalidad de los modales y paginación.
+## Introducción
 
-## API de Dragon Ball
+Este proyecto es una aplicación web interactiva que muestra información sobre los personajes y planetas del universo Dragon Ball. Utilizando la API pública de Dragon Ball, este proyecto ofrece una interfaz amigable para explorar y conocer más sobre este fascinante mundo.
 
-El proyecto utiliza la Dragon Ball API, una API pública que proporciona datos detallados sobre personajes, planetas, y más del universo Dragon Ball. Esta API es una excelente herramienta para acceder a información rica y variada, lo que permite integrar contenido relevante y actualizado en tus aplicaciones y proyectos.
+La aplicación permite a los usuarios:
+- 🔍 Buscar personajes y planetas
+- 👀 Ver detalles de cada personaje y planeta
+- 🖼️ Disfrutar de imágenes de alta calidad
+- 📱 Navegar fácilmente con una interfaz responsiva
 
-### Recursos Disponibles en la API
+Este proyecto no solo es una fuente de entretenimiento para los fans de Dragon Ball, sino también un excelente ejemplo de cómo construir una aplicación web moderna con React.
 
-La API de Dragon Ball ofrece los siguientes recursos:
+## 🛠️ Tecnologías Utilizadas
 
-- **Personajes**: Información sobre los personajes principales y secundarios, incluyendo detalles como nombre, imagen, descripción, y atributos específicos.
-- **Planetas**: Datos sobre los planetas del universo Dragon Ball, con información visual y descriptiva.
-- **Otras Entidades**: Dependiendo de la versión de la API, también puede ofrecer información sobre otras entidades relevantes.
+- **React** ⚛️: Biblioteca de JavaScript para construir interfaces de usuario.
+- **React Router** 🛣️: Enrutamiento declarativo para aplicaciones React.
+- **Bootstrap** 🎨: Framework CSS para diseño responsivo.
+- **API de Dragon Ball** 🌐: Fuente de datos para personajes y planetas.
 
-### Documentación
+## 📥 Instalación
 
-Puedes consultar la documentación completa de la API en [Dragon Ball API Documentation](https://dragon-ball-api.com/documentation) para obtener detalles sobre los endpoints disponibles, ejemplos de uso, y parámetros necesarios para realizar solicitudes.
+Sigue estos pasos para configurar el proyecto en tu máquina local:
 
-## Creación del Proyecto
-
-Crea un nuevo proyecto de React utilizando Create React App:
-
-```
-
-cd %userprofile%\Desktop
-
-npx create-react-app dragon-ball-project
-
-Asegúrate de tener react-router-dom instalado:
-
-npm install react-router-dom
-```
-
-
-Reemplaza el contenido generado automáticamente con los archivos y código proporcionado.
-
-## Estructura del Proyecto
-
-El proyecto tendrá la siguiente estructura:
-
-```
-dragon-ball-project
-│
-├── public
-│   └── index.html
-├── src
-│   ├── components
-│   │   ├── CharacterCard.js
-│   │   ├── CharacterModal.js
-│   │   ├── PlanetCard.js
-│   │   ├── PlanetModal.js
-│   │   └── Pagination.js
-│   ├── pages
-│   │   ├── Characters.js
-│   │   └── Planets.js
-│   ├── App.js
-│   ├── index.js
-│   └── styles.css
-└── package.json
-```
-
-## URL del Proyecto Desplegado:
-
-https://dragon-ball-project-react.vercel.app/
-
-
-## Galería
-
-| Imagen 1 | Imagen 2 | Imagen 3 |
-|:---------:|:---------:|:---------:|
-| ![Imagen 1](Image/1.png) | ![Imagen 2](Image/2.png) | ![Imagen 3](Image/3.png) |
-| Portada 1 | Portada 2 | Portada 3 |
-
-| Imagen 4 | Imagen 5 | Imagen 6 |
-|:---------:|:---------:|:---------:|
-| ![Imagen 4](Image/4.png) | ![Imagen 5](Image/5.png) | ![Imagen 6](Image/6.png) |
-| Portada 4 | Portada 5 | Portada 6 |
-
-
-## Scripts Disponibles
-
-En el directorio del proyecto, puedes ejecutar:
-
-### `npm start`
-
-Ejecuta la aplicación en modo de desarrollo.
-Abre [http://localhost:3000](http://localhost:3000) para verla en tu navegador.
-
-La página se recargará cuando hagas cambios.
-También puedes ver errores de lint en la consola.
-
-### `npm test`
-
-Inicia el ejecutor de pruebas en modo interactivo.
-Consulta la sección sobre [ejecutar pruebas](https://facebook.github.io/create-react-app/docs/running-tests) para más información.
-
-### `npm run build`
-
-Construye la aplicación para producción en la carpeta `build`.
-Empaqueta React correctamente en modo de producción y optimiza la construcción para obtener el mejor rendimiento.
-
-La construcción se minifica y los nombres de archivo incluyen los hashes.
-¡Tu aplicación está lista para ser desplegada!
-
-Consulta la sección sobre [despliegue](https://facebook.github.io/create-react-app/docs/deployment) para más información.
-
-### `npm run eject`
-
-**Nota: esta es una operación de un solo sentido. Una vez que 'ejectas', ¡no puedes volver atrás!**
-
-Si no estás satisfecho con la herramienta de construcción y las opciones de configuración, puedes 'eyectar' en cualquier momento. Este comando removerá la única dependencia de construcción de tu proyecto.
-
-En su lugar, copiará todos los archivos de configuración y las dependencias transitivas (webpack, Babel, ESLint, etc.) directamente en tu proyecto para que tengas control total sobre ellos. Todos los comandos excepto `eject` seguirán funcionando, pero apuntarán a los scripts copiados para que puedas ajustarlos. En este punto, estás por tu cuenta.
-
-No tienes que usar `eject` nunca. El conjunto de funciones seleccionadas es adecuado para despliegues pequeños y medianos, y no deberías sentirte obligado a usar esta función. Sin embargo, entendemos que esta herramienta no sería útil si no pudieras personalizarla cuando estés listo para ello.
-
-## Aprende Más
-
-Puedes aprender más en la [documentación de Create React App](https://facebook.github.io/create-react-app/docs/getting-started).
-
-Para aprender React, consulta la [documentación de React](https://reactjs.org/).
-
-### División del Código
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analizando el Tamaño del Paquete
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Creando una Aplicación Web Progresiva
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Configuración Avanzada
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Despliegue
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` falla al minificar
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-
-# 🐉 Dragon Ball Project API Tutorial 🌟
-
-## 📖 Introduction
-
-Welcome to the Dragon Ball Project API tutorial! This guide will walk you through creating an exciting web application that brings the vast and colorful world of Dragon Ball to life. Whether you're a die-hard fan of the series or just getting started with web development, this project offers a fun and engaging way to improve your React skills while exploring the Dragon Ball universe.
-
-Our application will utilize the Dragon Ball API to display information about characters and planets from the series. You'll learn how to fetch data from an API, create interactive components, implement search functionality, and more – all within the context of Goku's adventures and the rich lore of Dragon Ball.
-
-## 🚀 Project Overview
-
-The Dragon Ball Project API is a React-based web application that showcases characters and planets from the Dragon Ball universe. It features:
-
-- 👥 A character gallery with detailed information
-- 🌍 A planet explorer with descriptions and status
-- 🔍 Search functionality for both characters and planets
-- 📄 Pagination for easy navigation through large datasets
-- 🖼️ Modal pop-ups for in-depth information on each character and planet
-
-By the end of this tutorial, you'll have a fully functional web application that any Dragon Ball fan would love to explore!
-
-## 🛠️ Prerequisites
-
-Before we begin our journey, make sure you have the following installed:
-
-- Node.js (version 12 or higher)
-- npm (usually comes with Node.js)
-- A code editor of your choice (we recommend Visual Studio Code)
-- Basic knowledge of HTML, CSS, and JavaScript
-- Familiarity with React fundamentals
-
-## 🏗️ Project Setup
-
-Let's start by creating our project and setting up the necessary files:
-
-1. Open your terminal and navigate to the directory where you want to create your project.
-
-2. Run the following command to create a new React application:
-
+1. Clona el repositorio:
    ```
-   npx create-react-app dragon-ball-project
+   git clone https://github.com/tu-usuario/dragon-ball-project.git
    ```
 
-3. Once the project is created, navigate into the project directory:
-
+2. Navega al directorio del proyecto:
    ```
    cd dragon-ball-project
    ```
 
-4. Install the additional dependencies we'll need for this project:
+3. Instala las dependencias:
+   ```
+   npm install
+   ```
 
+4. Instala las dependencias adicionales:
    ```
    npm install react-router-dom bootstrap
    ```
 
-5. Replace the contents of the `src` folder with the files provided in this tutorial.
+## 🚀 Uso
 
-6. Update the `public/index.html` file with the provided content to include Bootstrap CSS and JS.
-
-## 📁 Project Structure
-
-Our project will have the following structure:
-
-```
-dragon-ball-project
-│
-├── public
-│   └── index.html
-├── src
-│   ├── components
-│   │   ├── CharacterCard.js
-│   │   ├── CharacterModal.js
-│   │   ├── PlanetCard.js
-│   │   ├── PlanetModal.js
-│   │   └── Pagination.js
-│   ├── pages
-│   │   ├── Characters.js
-│   │   └── Planets.js
-│   ├── App.js
-│   ├── index.js
-│   └── styles.css
-└── package.json
-```
-
-## 🧩 Component Breakdown
-
-Let's break down the main components of our application:
-
-1. **CharacterCard & PlanetCard**: These components display individual characters and planets in a card format.
-2. **CharacterModal & PlanetModal**: These provide detailed information about a character or planet when clicked.
-3. **Pagination**: This component handles navigation through multiple pages of results.
-4. **Characters & Planets pages**: These are the main views for browsing characters and planets.
-
-## 🔧 Implementation Steps
-
-We'll go through the implementation in the following order:
-
-1. Set up the base application structure (App.js and routing)
-2. Create the Characters page with API integration
-3. Implement the CharacterCard and CharacterModal components
-4. Create the Planets page following a similar pattern
-5. Implement the PlanetCard and PlanetModal components
-6. Add the Pagination component for both pages
-7. Style the application using Bootstrap and custom CSS
-
-## 🎨 Styling Your Application
-
-We're using Bootstrap for the base styling of our application. The `styles.css` file contains additional custom styles for the modals and other components. Feel free to adjust these styles to match your preferences or to make the application feel more "Dragon Ball"-like!
-
-## 🚀 Running Your Application
-
-To start your Dragon Ball Project API application, run the following command in your project directory:
+Para iniciar la aplicación en modo de desarrollo:
 
 ```
 npm start
 ```
 
-This will launch the application in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+La aplicación se abrirá automáticamente en tu navegador predeterminado. Si no, visita `http://localhost:3000`.
 
-## 🌟 Enhancing Your Project
+Para construir la aplicación para producción:
 
-Here are some ideas to take your Dragon Ball Project API to the next level:
+```
+npm run build
+```
 
-1. **Add a Battle Simulator**: Create a feature where users can select characters and simulate battles based on their power levels.
-2. **Implement User Authentication**: Allow users to create accounts and save their favorite characters and planets.
-3. **Create a Timeline**: Develop an interactive timeline of major events in the Dragon Ball series.
-4. **Add Soundtracks**: Incorporate iconic Dragon Ball soundtracks to play in the background while browsing.
-5. **Implement Data Visualization**: Create charts and graphs to visualize character power levels, planet sizes, etc.
+Para ejecutar las pruebas:
 
-## 🐞 Troubleshooting
+```
+npm test
+```
 
-If you encounter any issues while setting up or running your project, try the following steps:
+## 💻 Código
 
-1. Ensure all dependencies are correctly installed by running `npm install` again.
-2. Check that you're using a compatible version of Node.js.
-3. Clear your browser cache and restart the development server.
-4. Double-check that all file paths in your imports are correct.
+### Estructura del Proyecto
 
-If problems persist, refer to the React documentation or seek help in React community forums.
+```
+dragon-ball-project
+│
+├── public
+│   └── index.html
+├── src
+│   ├── components
+│   │   ├── CharacterCard.js
+│   │   ├── CharacterModal.js
+│   │   ├── PlanetCard.js
+│   │   ├── PlanetModal.js
+│   │   └── Pagination.js
+│   ├── pages
+│   │   ├── Characters.js
+│   │   └── Planets.js
+│   ├── App.js
+│   ├── index.js
+│   └── styles.css
+└── package.json
+```
 
-## 🎉 Conclusion
+### Componentes Principales
 
-Congratulations! You've now created a fantastic Dragon Ball-themed web application using React and the Dragon Ball API. This project has helped you practice important concepts like working with APIs, state management, and creating reusable components.
+#### App.js
+Este es el componente principal que configura las rutas de la aplicación.
 
-Remember, the journey of a developer is much like Goku's path to becoming the strongest warrior – it takes practice, persistence, and a willingness to learn. Keep exploring, keep coding, and who knows? Your next project might just go Super Saiyan!
+```javascript
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Characters from './pages/Characters';
+import Planets from './pages/Planets';
 
-May your code be as powerful as a Kamehameha and as bug-free as Shenron's wish-granting! Happy coding! 🐉✨
+function App() {
+  return (
+    <Router>
+      <div className="container mt-5">
+        <Routes>
+          <Route path="/" element={<Characters />} />
+          <Route path="/planets" element={<Planets />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+```
+
+#### Characters.js
+Este componente maneja la lógica para mostrar y filtrar personajes.
+
+```javascript
+import React, { useState, useEffect } from 'react';
+import CharacterCard from '../components/CharacterCard';
+import CharacterModal from '../components/CharacterModal';
+import Pagination from '../components/Pagination';
+
+function Characters() {
+  const [characters, setCharacters] = useState([]);
+  const [filteredCharacters, setFilteredCharacters] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(12);
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetchCharacters();
+  }, []);
+
+  const fetchCharacters = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch('https://dragonball-api.com/api/characters?limit=1000');
+      const data = await response.json();
+      setCharacters(data.items);
+      setFilteredCharacters(data.items);
+    } catch (error) {
+      setError('Error fetching characters');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSearch = (e) => {
+    const query = e.target.value.toLowerCase();
+    const filtered = characters.filter(character => character.name.toLowerCase().includes(query));
+    setFilteredCharacters(filtered);
+    setCurrentPage(1);
+  };
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentCharacters = filteredCharacters.slice(indexOfFirstItem, indexOfLastItem);
+
+  return (
+    <div>
+      <h1 className="text-center mb-4">🐲Dragon Ball Characters 🌍</h1>
+      <div className="row justify-content-center mb-4">
+        <div className="col-md-6">
+          <div className="input-group">
+            <input type="text" className="form-control" placeholder="Search characters by name" onChange={handleSearch} />
+            <a href="/planets" className="btn btn-success ms-2">View Planets</a>
+          </div>
+        </div>
+      </div>
+      {loading ? (
+        <div className="text-center">Loading...</div>
+      ) : error ? (
+        <div className="text-center text-danger">{error}</div>
+      ) : (
+        <>
+          <div className="row row-cols-1 row-cols-md-4 g-4 mb-4">
+            {currentCharacters.map(character => (
+              <CharacterCard key={character.id} character={character} setSelectedCharacter={setSelectedCharacter} />
+            ))}
+          </div>
+          <Pagination
+            itemsPerPage={itemsPerPage}
+            totalItems={filteredCharacters.length}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+          {selectedCharacter && (
+            <CharacterModal character={selectedCharacter} setSelectedCharacter={setSelectedCharacter} />
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
+export default Characters;
+```
+
+#### Planets.js
+Similar a Characters.js, este componente maneja la lógica para mostrar y filtrar planetas.
+
+```javascript
+import React, { useState, useEffect } from 'react';
+import PlanetCard from '../components/PlanetCard';
+import PlanetModal from '../components/PlanetModal';
+import Pagination from '../components/Pagination';
+
+function Planets() {
+  const [planets, setPlanets] = useState([]);
+  const [filteredPlanets, setFilteredPlanets] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(12);
+  const [selectedPlanet, setSelectedPlanet] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetchPlanets();
+  }, []);
+
+  const fetchPlanets = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch('https://dragonball-api.com/api/planets?limit=1000');
+      const data = await response.json();
+      setPlanets(data.items);
+      setFilteredPlanets(data.items);
+    } catch (error) {
+      setError('Error fetching planets');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSearch = (e) => {
+    const query = e.target.value.toLowerCase();
+    const filtered = planets.filter(planet => planet.name.toLowerCase().includes(query));
+    setFilteredPlanets(filtered);
+    setCurrentPage(1);
+  };
+
+  const handleClear = () => {
+    setFilteredPlanets(planets);
+    setCurrentPage(1);
+  };
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentPlanets = filteredPlanets.slice(indexOfFirstItem, indexOfLastItem);
+
+  return (
+    <div>
+      <h1 className="text-center mb-4">🐲 Dragon Ball Planets 🌍</h1>
+      <div className="row justify-content-center mb-4">
+        <div className="col-md-6">
+          <div className="input-group">
+            <input type="text" className="form-control" placeholder="Search planets by name" onChange={handleSearch} />
+            <button className="btn btn-secondary" onClick={handleClear}>Clear</button>
+            <a href="/" className="btn btn-danger ms-2">View Characters</a>
+          </div>
+        </div>
+      </div>
+      {loading ? (
+        <div className="text-center">Loading...</div>
+      ) : error ? (
+        <div className="text-center text-danger">{error}</div>
+      ) : (
+        <>
+          <div className="row row-cols-1 row-cols-md-3 g-4 mb-4">
+            {currentPlanets.map(planet => (
+              <PlanetCard key={planet.id} planet={planet} setSelectedPlanet={setSelectedPlanet} />
+            ))}
+          </div>
+          <Pagination
+            itemsPerPage={itemsPerPage}
+            totalItems={filteredPlanets.length}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+          {selectedPlanet && (
+            <PlanetModal planet={selectedPlanet} setSelectedPlanet={setSelectedPlanet} />
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
+export default Planets;
+```
+
+### Componentes Auxiliares
+
+#### CharacterCard.js
+```javascript
+import React from 'react';
+
+function CharacterCard({ character, setSelectedCharacter }) {
+  return (
+    <div className="col">
+      <div className="card h-100 shadow">
+        <img src={character.image} className="card-img-top" alt={character.name} />
+        <div className="card-body">
+          <h5 className="card-title">{character.name}</h5>
+          <button className="btn btn-primary" onClick={() => setSelectedCharacter(character)}>View Details</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default CharacterCard;
+```
+
+#### CharacterModal.js
+```javascript
+import React from 'react';
+import Modal from 'react-bootstrap/Modal';
+
+function CharacterModal({ character, setSelectedCharacter }) {
+  return (
+    <Modal show={true} onHide={() => setSelectedCharacter(null)} centered>
+      <Modal.Body>
+        <div className="d-flex">
+          <img
+            src={character.image}
+            alt={character.name}
+            className="me-3"
+            style={{ width: "150px", height: "350px" }}
+          />
+          <div className="text-center">
+            <h5>{character.name}</h5>
+            <p style={{ fontSize: "12px" }}><strong>Description:</strong> {character.description}</p>
+            <p><strong>Species:</strong> {character.race || "Unknown"}</p>
+            <p><strong>Gender:</strong> {character.gender}</p>
+            <p><strong>Ki:</strong> {character.ki || "Unknown"}</p>
+            <p><strong>Affiliation:</strong> {character.affiliation}</p>
+          </div>
+        </div>
+      </Modal.Body>
+    </Modal>
+  );
+}
+
+export default CharacterModal;
+```
+
+#### PlanetCard.js
+```javascript
+import React from 'react';
+
+function PlanetCard({ planet, setSelectedPlanet }) {
+  return (
+    <div className="col">
+      <div className="card h-100 shadow">
+        <img src={planet.image} className="card-img-top" alt={planet.name} />
+        <div className="card-body">
+          <h5 className="card-title">{planet.name}</h5>
+          <button className="btn btn-primary" onClick={() => setSelectedPlanet(planet)}>View Details</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default PlanetCard;
+```
+
+#### PlanetModal.js
+```javascript
+import React from 'react';
+import Modal from 'react-bootstrap/Modal';
+
+function PlanetModal({ planet, setSelectedPlanet }) {
+  return (
+    <Modal show={true} onHide={() => setSelectedPlanet(null)} centered>
+      <Modal.Body>
+        <div className="d-flex">
+          <img src={planet.image} alt={planet.name} className="me-3" style={{ width: '200px', height: 'auto' }} />
+          <div className="text-center">
+            <h5>{planet.name}</h5>
+            <p><strong>Description:</strong> {planet.description}</p>
+            <p><strong>Destroyed:</strong> {planet.destroyed ? 'Yes' : 'No'}</p>
+          </div>
+        </div>
+      </Modal.Body>
+    </Modal>
+  );
+}
+
+export default PlanetModal;
+```
+
+#### Pagination.js
+```javascript
+import React from 'react';
+
+function Pagination({ itemsPerPage, totalItems, currentPage, setCurrentPage }) {
+  const pageNumbers = [];
+
+  for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+  return (
+    <nav>
+      <ul className="pagination justify-content-center">
+        {pageNumbers.map(number => (
+          <li key={number} className={`page-item ${number === currentPage ? 'active' : ''}`}>
+            <button onClick={() => setCurrentPage(number)} className="page-link">
+              {number}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
+export default Pagination;
+```
+
+### Estilos (styles.css)
+```css
+.modal {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal .modal-content {
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.modal .modal-body {
+  padding: 2rem;
+}
+
+.modal .modal-body img {
+  border-radius: 0.5rem;
+}
+```
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas y apreciadas. Para contribuir:
+
+1. 🍴 Haz un fork del repositorio.
+2. 🌿 Crea una nueva rama (`git checkout -b feature/AmazingFeature`).
+3. 💻 Haz tus cambios y commitea (`git commit -m 'Add some AmazingFeature'`).
+5. 4. 📤 Haz push a la rama (`git push origin feature/AmazingFeature`).
+5. 🔄 Abre un Pull Request.
+
+Por favor, asegúrate de actualizar las pruebas según corresponda y de seguir el estilo de código del proyecto.
+
+## 📜 Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+
+## 🚀 Áreas de Mejora
+
+Aunque este proyecto ya es funcional, hay varias áreas en las que se podría mejorar:
+
+1. 🛠️ **Manejo de Errores**: Implementar un manejo de errores más robusto para las llamadas a la API.
+2. ⏳ **Estados de Carga**: Añadir indicadores de carga más detallados mientras se obtienen los datos.
+3. 🚪 **Cierre de Modal**: Agregar un botón de cierre explícito a los modales para mejorar la experiencia del usuario.
+4. 📱 **Diseño Responsivo**: Asegurar que todos los componentes sean completamente responsivos en diferentes tamaños de pantalla.
+5. 🔄 **Duplicación de Código**: Considerar la creación de un servicio de API compartido para reducir la duplicación en `Characters.js` y `Planets.js`.
+6. ✅ **Comprobación de Tipos**: Considerar añadir PropTypes o TypeScript para una mejor comprobación de tipos y prevención de errores.
+7. 🌐 **Internacionalización**: Implementar soporte para múltiples idiomas para hacer la aplicación accesible a una audiencia más amplia.
+8. 🎨 **Temas**: Añadir soporte para temas claro y oscuro para mejorar la experiencia del usuario en diferentes condiciones de iluminación.
+
+## 📚 Recursos Adicionales
+
+- [Documentación de React](https://reactjs.org/docs/getting-started.html)
+- [Documentación de React Router](https://reactrouter.com/web/guides/quick-start)
+- [Documentación de Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+- [Dragon Ball API Documentation](https://dragonball-api.com/documentation) (ficticia, reemplazar con la documentación real si existe)
+
+## 📞 Contacto
+
+Si tienes alguna pregunta o sugerencia, no dudes en abrir un issue o contactar al mantenedor del proyecto:
+
+👤 [JUANCITO PEÑA](https://github.com/JUANCITOPENA)
+
+---
+
+🐉 ¡Disfruta explorando el universo de Dragon Ball con nuestra aplicación! 🌟
